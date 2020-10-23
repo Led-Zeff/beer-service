@@ -2,6 +2,8 @@ package courses.microservices.beerservice.controller;
 
 import java.util.UUID;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +28,7 @@ public class BeerController {
 
   @PostMapping
   @ResponseStatus(code = HttpStatus.CREATED)
-  public void createBeer() {
+  public void createBeer(@RequestBody @Valid BeerDto beerDto) {
 
   }
 
