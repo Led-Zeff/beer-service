@@ -15,27 +15,30 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import courses.microservices.beerservice.model.BeerDto;
+import courses.microservices.beerservice.service.BeerService;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/v1/beer")
+@RequiredArgsConstructor
 public class BeerController {
+
+  private final BeerService beerService;
   
   @GetMapping("{beerId}")
   public BeerDto getById(@PathVariable UUID beerId) {
-    return BeerDto.builder()
-            .build();
+    return beerService.findById(beerId);
   }
 
   @PostMapping
   @ResponseStatus(code = HttpStatus.CREATED)
-  public void createBeer(@RequestBody @Valid BeerDto beerDto) {
-
+  public BeerDto createBeer(@RequestBody @Valid BeerDto beerDto) {
+    return beerService.save(beerDto);
   }
 
   @PutMapping("{beerId}")
-  @ResponseStatus(code = HttpStatus.NO_CONTENT)
-  public void updateBeer(@PathVariable UUID beerId, @RequestBody BeerDto beerDto) {
-
+  public BeerDto updateBeer(@PathVariable UUID beerId, @RequestBody BeerDto beerDto) {
+    return beerService.update(beerId, beerDto);
   }
 
 }
