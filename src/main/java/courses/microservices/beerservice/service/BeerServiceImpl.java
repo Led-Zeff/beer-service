@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
+import org.springframework.stereotype.Service;
+
 import courses.microservices.beerservice.domain.Beer;
 import courses.microservices.beerservice.exception.NotFoundException;
 import courses.microservices.beerservice.mapper.BeerMapper;
@@ -11,6 +13,7 @@ import courses.microservices.beerservice.model.BeerDto;
 import courses.microservices.beerservice.repository.BeerRepository;
 import lombok.RequiredArgsConstructor;
 
+@Service
 @RequiredArgsConstructor
 public class BeerServiceImpl implements BeerService {
 
