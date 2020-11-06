@@ -8,5 +8,6 @@ import courses.microservices.beerservice.model.BeerDto;
 @Mapper(uses = {DateMapper.class})
 public interface BeerMapper {
   BeerDto beerToDto(Beer beer);
+  BeerDto beerToDtoWithInventory(Beer beer);
   Beer dtoToBeer(BeerDto beerDto);
 }

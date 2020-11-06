@@ -30,7 +30,7 @@ public class BeerControllerTests {
 
   @Test
   void getBeerById() throws Exception {
-    BDDMockito.given(beerService.findById(ArgumentMatchers.any())).willReturn(new BeerDto());
+    BDDMockito.given(beerService.findById(ArgumentMatchers.any(), false)).willReturn(new BeerDto());
 
     mockMvc.perform(
         MockMvcRequestBuilders.get("/api/v1/beer/" + UUID.randomUUID().toString()).accept(MediaType.APPLICATION_JSON))
