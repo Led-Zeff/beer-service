@@ -1,5 +1,6 @@
 package courses.microservices.beerservice.repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.domain.Page;
@@ -13,4 +14,5 @@ public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
   Page<Beer> findAllByName(String name, Pageable pageable);
   Page<Beer> findAllByStyle(BeerStyle style, Pageable pageable);
   Page<Beer> findAllByNameAndStyle(String name, BeerStyle style, Pageable pageable);
+  Optional<Beer> findByUpc(String upc);
 }

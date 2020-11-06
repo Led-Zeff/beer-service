@@ -12,7 +12,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 public class BeerPagedList extends PageImpl<BeerDto> {
-  private static final long serialVersionUID = 15724830548656L;
+
+  private static final long serialVersionUID = 1532512348148438389L;
 
   @JsonCreator(mode = Mode.PROPERTIES)
   public BeerPagedList(
@@ -37,4 +38,5 @@ public class BeerPagedList extends PageImpl<BeerDto> {
   public BeerPagedList(List<BeerDto> content) {
     super(content);
   }
+
 }

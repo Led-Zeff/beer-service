@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -26,12 +27,14 @@ public class BeerServiceImpl implements BeerService {
   private final BeerRepository beerRepository;
   private final BeerMapper beerMapper;
 
+  @Cacheable(cacheNames = "beerCache", key = "#beerId", condition = "#showInventoryOnHand == false")
   @Override
   public BeerDto findById(UUID beerId, boolean showInventoryOnHand) {
     Beer beer = beerRepository.findById(beerId).orElseThrow(NotFoundException::new);
     return showInventoryOnHand ? beerMapper.beerToDtoWithInventory(beer) : beerMapper.beerToDto(beer);
   }
-
+  
+  @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnHand == false")
   @Override
   public BeerPagedList listBeers(String name, BeerStyle style, boolean showInventoryOnHand, Pageable pageable) {
     Page<Beer> page;
@@ -69,6 +72,13 @@ public class BeerServiceImpl implements BeerService {
     beer.setUpc(beerDto.getUpc());
 
     return beerMapper.beerToDto(beerRepository.save(beer));
+  }
+
+  @Cacheable(cacheNames = "beerUpcCache", key = "#upc", condition = "#showInventoryOnHand == false")
+  @Override
+  public BeerDto findByUpc(String upc, boolean showInventoryOnHand) {
+    Beer beer = beerRepository.findByUpc(upc).orElseThrow(NotFoundException::new);
+    return showInventoryOnHand ? beerMapper.beerToDtoWithInventory(beer) : beerMapper.beerToDto(beer);
   }
 
 }

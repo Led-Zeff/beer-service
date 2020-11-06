@@ -52,4 +52,9 @@ public class BeerController {
     return beerService.update(beerId, beerDto);
   }
 
+  @GetMapping("/beerUpc/{upc}")
+  public BeerDto getByUpc(@PathVariable String upc, @RequestParam(defaultValue = "false") boolean showInventoryOnHand) {
+    return beerService.findByUpc(upc, showInventoryOnHand);
+  }
+
 }

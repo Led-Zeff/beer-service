@@ -15,4 +15,5 @@ public interface BeerService {
 	BeerPagedList listBeers(String name, BeerStyle style, boolean showInventoryOnHand, Pageable pageable);
 	BeerDto save(@Valid BeerDto beerDto);
 	BeerDto update(UUID beerId, BeerDto beerDto);
+	BeerDto findByUpc(String upc, boolean showInventoryOnHand);
 }
