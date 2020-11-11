@@ -11,8 +11,8 @@ import courses.microservices.beerservice.service.inventory.BeerInventoryService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Disabled
 @SpringBootTest
+@Disabled
 public class BeerInventoryServiceRestTest {
   
   @Autowired
@@ -20,7 +20,7 @@ public class BeerInventoryServiceRestTest {
 
   @Test
   void getQuentityOnHand() {
-    Integer qoh = beerInventoryService.getOnHandInventory(UUID.randomUUID());
+    Integer qoh = beerInventoryService.getOnHandInventory(UUID.fromString("0a818933-087d-47f2-ad83-2f986ed087eb"));
     log.info(qoh.toString());
   }
 
