@@ -13,8 +13,7 @@ import lombok.RequiredArgsConstructor;
 public class BeerEvent implements Serializable {
 
   private static final long serialVersionUID = 132674832682313L;
-  
+
   private final BeerDto beerDto;
-  
 
 }

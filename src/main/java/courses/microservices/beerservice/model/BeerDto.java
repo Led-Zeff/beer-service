@@ -37,10 +37,10 @@ public class BeerDto implements Serializable {
   private OffsetDateTime lastModifiedDate;
 
   @NotBlank
-  private String name;
+  private String beerName;
 
   @NotNull
-  private BeerStyle style;
+  private BeerStyle beerStyle;
 
   @NotNull
   private String upc;

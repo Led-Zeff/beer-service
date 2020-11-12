@@ -43,8 +43,8 @@ public class Beer {
   @UpdateTimestamp
   @Column(insertable = false)
   private Timestamp lastModifiedDate;
-  private String name;
-  private String style;
+  private String beerName;
+  private String beerStyle;
 
   @Column(unique = true)
   private String upc;

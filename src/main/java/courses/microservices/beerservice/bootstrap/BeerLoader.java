@@ -28,9 +28,9 @@ public class BeerLoader implements CommandLineRunner {
 
   private void loadBeers() {
     if (beerRepository.count() == 0) {
-      beerRepository.save(Beer.builder().name("Mango Bobs").style("IPA").quantityToBrew(200).upc(BEER_1_UPC).price(new BigDecimal("12.32")).minOnHand(32).build());
-      beerRepository.save(Beer.builder().name("Galaxy Cat").style("PALE_ALE").quantityToBrew(200).upc(BEER_2_UPC).price(new BigDecimal("23.76")).minOnHand(32).build());
-      beerRepository.save(Beer.builder().name("Another Cat").style("ALE").quantityToBrew(200).upc(BEER_3_UPC).price(new BigDecimal("45.76")).minOnHand(90).build());
+      beerRepository.save(Beer.builder().beerName("Mango Bobs").beerStyle("IPA").quantityToBrew(200).upc(BEER_1_UPC).price(new BigDecimal("12.32")).minOnHand(32).build());
+      beerRepository.save(Beer.builder().beerName("Galaxy Cat").beerStyle("PALE_ALE").quantityToBrew(200).upc(BEER_2_UPC).price(new BigDecimal("23.76")).minOnHand(32).build());
+      beerRepository.save(Beer.builder().beerName("Another Cat").beerStyle("ALE").quantityToBrew(200).upc(BEER_3_UPC).price(new BigDecimal("45.76")).minOnHand(90).build());
 
       log.info("Loaded beers");
     }

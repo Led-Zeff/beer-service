@@ -66,8 +66,8 @@ public class BeerServiceImpl implements BeerService {
   public BeerDto update(UUID beerId, BeerDto beerDto) {
     Beer beer = beerRepository.findById(beerId).orElseThrow(NotFoundException::new);
 
-    beer.setName(beerDto.getName());
-    beer.setStyle(beerDto.getStyle().name());
+    beer.setBeerName(beerDto.getBeerName());
+    beer.setBeerStyle(beerDto.getBeerStyle().name());
     beer.setPrice(beerDto.getPrice());
     beer.setUpc(beerDto.getUpc());
 
