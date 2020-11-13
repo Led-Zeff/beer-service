@@ -3,17 +3,19 @@ package courses.microservices.beerservice.event;
 import java.io.Serializable;
 
 import courses.microservices.beerservice.model.BeerDto;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BeerEvent implements Serializable {
 
   private static final long serialVersionUID = 132674832682313L;
 
-  private final BeerDto beerDto;
+  private BeerDto beerDto;
 
 }
