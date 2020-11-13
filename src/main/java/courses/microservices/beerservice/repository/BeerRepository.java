@@ -11,8 +11,8 @@ import courses.microservices.beerservice.domain.Beer;
 import courses.microservices.beerservice.model.BeerStyle;
 
 public interface BeerRepository extends JpaRepository<Beer, UUID> {
-  Page<Beer> findAllByName(String name, Pageable pageable);
-  Page<Beer> findAllByStyle(BeerStyle style, Pageable pageable);
-  Page<Beer> findAllByNameAndStyle(String name, BeerStyle style, Pageable pageable);
+  Page<Beer> findAllByBeerName(String name, Pageable pageable);
+  Page<Beer> findAllByBeerStyle(BeerStyle style, Pageable pageable);
+  Page<Beer> findAllByBeerNameAndBeerStyle(String name, BeerStyle style, Pageable pageable);
   Optional<Beer> findByUpc(String upc);
 }
