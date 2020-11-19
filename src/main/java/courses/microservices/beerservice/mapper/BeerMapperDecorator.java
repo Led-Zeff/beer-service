@@ -3,8 +3,8 @@ package courses.microservices.beerservice.mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import courses.microservices.beerservice.domain.Beer;
-import courses.microservices.beerservice.model.BeerDto;
 import courses.microservices.beerservice.service.inventory.BeerInventoryService;
+import courses.microservices.brewery.model.BeerDto;
 
 public abstract class BeerMapperDecorator implements BeerMapper {
 

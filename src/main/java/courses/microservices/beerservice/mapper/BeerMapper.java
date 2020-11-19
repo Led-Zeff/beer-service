@@ -4,7 +4,7 @@ import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 
 import courses.microservices.beerservice.domain.Beer;
-import courses.microservices.beerservice.model.BeerDto;
+import courses.microservices.brewery.model.BeerDto;
 
 @Mapper(uses = {DateMapper.class})
 @DecoratedWith(BeerMapperDecorator.class)

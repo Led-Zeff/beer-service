@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import courses.microservices.beerservice.model.BeerDto;
-import courses.microservices.beerservice.model.BeerPagedList;
-import courses.microservices.beerservice.model.BeerStyle;
 import courses.microservices.beerservice.service.BeerService;
+import courses.microservices.brewery.model.BeerDto;
+import courses.microservices.brewery.model.BeerPagedList;
+import courses.microservices.brewery.model.BeerStyle;
 import lombok.RequiredArgsConstructor;
 
 @RestController

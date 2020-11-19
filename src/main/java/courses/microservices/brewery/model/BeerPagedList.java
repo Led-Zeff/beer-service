@@ -1,4 +1,4 @@
-package courses.microservices.beerservice.model;
+package courses.microservices.brewery.model;
 
 import java.util.List;
 

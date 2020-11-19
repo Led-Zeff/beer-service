@@ -1,8 +1,8 @@
-package courses.microservices.beerservice.event;
+package courses.microservices.brewery.event;
 
 import java.io.Serializable;
 
-import courses.microservices.beerservice.model.BeerDto;
+import courses.microservices.brewery.model.BeerDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

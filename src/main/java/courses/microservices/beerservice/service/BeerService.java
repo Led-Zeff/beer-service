@@ -6,9 +6,9 @@ import javax.validation.Valid;
 
 import org.springframework.data.domain.Pageable;
 
-import courses.microservices.beerservice.model.BeerDto;
-import courses.microservices.beerservice.model.BeerPagedList;
-import courses.microservices.beerservice.model.BeerStyle;
+import courses.microservices.brewery.model.BeerDto;
+import courses.microservices.brewery.model.BeerPagedList;
+import courses.microservices.brewery.model.BeerStyle;
 
 public interface BeerService {
 	BeerDto findById(UUID beerId, boolean showInventoryOnHand);

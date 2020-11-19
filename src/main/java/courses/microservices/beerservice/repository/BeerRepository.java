@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import courses.microservices.beerservice.domain.Beer;
-import courses.microservices.beerservice.model.BeerStyle;
+import courses.microservices.brewery.model.BeerStyle;
 
 public interface BeerRepository extends JpaRepository<Beer, UUID> {
   Page<Beer> findAllByBeerName(String name, Pageable pageable);

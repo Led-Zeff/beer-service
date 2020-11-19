@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import courses.microservices.beerservice.config.JmsConfig;
 import courses.microservices.beerservice.domain.Beer;
-import courses.microservices.beerservice.event.BrewBeerEvent;
-import courses.microservices.beerservice.event.NewInventoryEvent;
-import courses.microservices.beerservice.model.BeerDto;
 import courses.microservices.beerservice.repository.BeerRepository;
+import courses.microservices.brewery.event.BrewBeerEvent;
+import courses.microservices.brewery.event.NewInventoryEvent;
+import courses.microservices.brewery.model.BeerDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

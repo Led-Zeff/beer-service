@@ -17,9 +17,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import courses.microservices.beerservice.controller.BeerController;
-import courses.microservices.beerservice.model.BeerDto;
-import courses.microservices.beerservice.model.BeerStyle;
 import courses.microservices.beerservice.service.BeerService;
+import courses.microservices.brewery.model.BeerDto;
+import courses.microservices.brewery.model.BeerStyle;
 
 @WebMvcTest(BeerController.class)
 public class BeerControllerTests {

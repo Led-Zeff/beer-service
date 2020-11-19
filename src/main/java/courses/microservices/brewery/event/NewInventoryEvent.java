@@ -1,6 +1,6 @@
-package courses.microservices.beerservice.event;
+package courses.microservices.brewery.event;
 
-import courses.microservices.beerservice.model.BeerDto;
+import courses.microservices.brewery.model.BeerDto;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

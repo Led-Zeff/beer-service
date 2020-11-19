@@ -14,10 +14,10 @@ import org.springframework.util.StringUtils;
 import courses.microservices.beerservice.domain.Beer;
 import courses.microservices.beerservice.exception.NotFoundException;
 import courses.microservices.beerservice.mapper.BeerMapper;
-import courses.microservices.beerservice.model.BeerDto;
-import courses.microservices.beerservice.model.BeerPagedList;
-import courses.microservices.beerservice.model.BeerStyle;
 import courses.microservices.beerservice.repository.BeerRepository;
+import courses.microservices.brewery.model.BeerDto;
+import courses.microservices.brewery.model.BeerPagedList;
+import courses.microservices.brewery.model.BeerStyle;
 import lombok.RequiredArgsConstructor;
 
 @Service
