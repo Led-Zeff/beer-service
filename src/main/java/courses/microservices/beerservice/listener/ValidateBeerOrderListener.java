@@ -25,6 +25,8 @@ public class ValidateBeerOrderListener {
   public void listen(ValidateBeerOrderRequestEvent event) {
     boolean isValid = event.getBeerOrderDto().getBeerOrderLines().stream()
       .allMatch(orderLine -> beerRepository.existsByUpc(orderLine.getUpc()));
+
+    log.info("Order validated with ID {}, result: {}", event.getBeerOrderDto().getId(), isValid);
     
     jmsTemplate.convertAndSend(JmsConfig.VALIDATE_ORDER_RESULT_QUEUE, new ValidateBeerOrderResponse(event.getBeerOrderDto().getId(), isValid));
   }
